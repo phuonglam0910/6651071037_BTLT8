@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f8ff" />
+    <meta
+      name="description"
+      content="MiniNow - phụ kiện điện thoại chính hãng, giá tốt, giao hàng nhanh."
+    />
+    <title>MiniNow — Phụ kiện công nghệ cho bạn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="../js/app.js" defer></script>
+  </head>
+  <body>
+    <div id="app" v-cloak>
+      <div class="announcement">
+        <div class="container shop-container d-flex flex-wrap justify-content-center justify-content-md-between gap-2">
+          <span><i class="bi bi-truck"></i> Miễn phí giao hàng đơn từ 499.000₫</span>
+          <span class="announcement-right">Đổi trả trong 7 ngày · Hỗ trợ mỗi ngày 08:00–22:00</span>
+        </div>
+      </div>
+
+      <header class="site-header sticky-top">
+        <nav class="container shop-container navbar navbar-expand-lg py-3" aria-label="Điều hướng chính">
+          <a class="brand" href="#home" aria-label="MiniNow - Trang chủ">
+            <span class="brand-mark"><i class="bi bi-lightning-charge-fill"></i></span>
+            <span class="brand-name">mini<span>now</span><small>PHỤ KIỆN CÔNG NGHỆ</small></span>
+          </a>
+
+          <button
+            class="mobile-menu-button d-lg-none"
+            type="button"
+            aria-label="Mở menu"
+            :aria-expanded="mobileMenuOpen"
+            @click="mobileMenuOpen = !mobileMenuOpen"
+          >
+            <i :class="mobileMenuOpen ? 'bi bi-x-lg' : 'bi bi-list'"></i>
+          </button>
+
+          <div class="desktop-nav d-none d-lg-flex">
+            <a class="nav-item-link active" href="#home">Trang chủ</a>
+            <a class="nav-item-link" href="#products">Sản phẩm</a>
+            <a class="nav-item-link" href="#promotions">Khuyến mãi</a>
+            <a class="nav-item-link" href="#footer">Liên hệ</a>
+          </div>
+
+          <a class="header-cart d-none d-sm-inline-flex" href="#cart" aria-label="Xem giỏ hàng">
+            <i class="bi bi-bag"></i>
+            <span>Giỏ hàng</span>
+            <span class="header-cart-count">{{ cartCount }}</span>
+          </a>
+        </nav>
+        <div v-if="mobileMenuOpen" class="mobile-nav d-lg-none">
+          <a href="#home" @click="mobileMenuOpen = false">Trang chủ</a>
+          <a href="#products" @click="mobileMenuOpen = false">Sản phẩm</a>
+          <a href="#promotions" @click="mobileMenuOpen = false">Khuyến mãi</a>
+          <a href="#footer" @click="mobileMenuOpen = false">Liên hệ</a>
+          <a href="#cart" @click="mobileMenuOpen = false">Giỏ hàng ({{ cartCount }})</a>
+        </div>
+      </header>
+
+      <main>
+        <section id="home" class="hero-section">
+          <div class="container shop-container">
+            <div class="hero-copy">
+              <span class="hero-kicker"><i class="bi bi-stars"></i> Nâng cấp góc công nghệ</span>
+              <h1>Phụ kiện xịn.<br /><span>Chất riêng của bạn.</span></h1>
+              <p>Chọn phụ kiện phù hợp, thêm tiện ích cho mỗi ngày. Mẫu đẹp, giá tốt, giao nhanh tận tay.</p>
+              <div class="hero-actions">
+                <a class="button-primary" href="#products">Khám phá sản phẩm <i class="bi bi-arrow-right"></i></a>
+                <a class="button-text" href="#promotions">Xem ưu đãi hôm nay</a>
+              </div>
+              <div class="hero-proof">
+                <div class="proof-avatars" aria-hidden="true">
+                  <span>H</span><span>M</span><span>A</span>
+                </div>
+                <p><strong>4.9/5</strong> từ hơn 1.200 khách hàng</p>
+              </div>
+            </div>
+            <div class="hero-visual">
+              <div class="hero-orb hero-orb-blue"></div>
+              <div class="hero-orb hero-orb-pink"></div>
+              <img src="../images/hero-gadgets.jpg" alt="Góc làm việc với máy tính và điện thoại" />
+              <div class="floating-note">
+                <span class="floating-note-icon"><i class="bi bi-box-seam"></i></span>
+                <span><strong>Đóng gói chỉn chu</strong><small>Trao tay là thích</small></span>
+              </div>
+              <div class="hero-discount"><strong>-20%</strong><span>đơn đầu</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="benefit-strip" aria-label="Dịch vụ MiniNow">
+          <div class="container shop-container benefit-grid">
+            <div class="benefit-item"><span><i class="bi bi-patch-check"></i></span><div><strong>Chính hãng</strong><small>Chọn lọc kỹ càng</small></div></div>
+            <div class="benefit-item"><span><i class="bi bi-truck"></i></span><div><strong>Giao hàng nhanh</strong><small>Nhận hàng tiện lợi</small></div></div>
+            <div class="benefit-item"><span><i class="bi bi-arrow-repeat"></i></span><div><strong>Đổi trả 7 ngày</strong><small>Mua sắm an tâm</small></div></div>
+            <div class="benefit-item"><span><i class="bi bi-headset"></i></span><div><strong>Luôn có hỗ trợ</strong><small>Tư vấn tận tình</small></div></div>
+          </div>
+        </section>
+
+        <section id="products" class="products-section">
+          <div class="container shop-container">
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker">Bộ sưu tập mới</span>
+                <h2>Chọn món bạn cần</h2>
+                <p>Những phụ kiện nhỏ, nâng trải nghiệm mỗi ngày.</p>
+              </div>
+              <div class="product-search">
+                <i class="bi bi-search" aria-hidden="true"></i>
+                <input v-model.trim="searchQuery" type="search" placeholder="Tìm phụ kiện..." aria-label="Tìm phụ kiện" />
+                <button v-if="searchQuery" type="button" aria-label="Xóa tìm kiếm" @click="searchQuery = ''"><i class="bi bi-x"></i></button>
+              </div>
+            </div>
+
+            <div class="shop-layout">
+              <section class="catalog" aria-label="Danh sách sản phẩm">
+                <div class="category-bar" role="group" aria-label="Lọc theo danh mục">
+                  <button
+                    v-for="category in categories"
+                    :key="category.id"
+                    class="category-chip"
+                    :class="{ selected: activeCategory === category.id }"
+                    type="button"
+                    :aria-pressed="activeCategory === category.id"
+                    @click="activeCategory = category.id"
+                  >{{ category.name }} <span>{{ categoryCount(category.id) }}</span></button>
+                </div>
+
+                <div v-if="filteredProducts.length" class="product-grid">
+                  <article v-for="product in filteredProducts" :key="product.id" class="product-card">
+                    <div class="product-visual" :class="`tone-${product.tone}`">
+                      <span v-if="product.badge" class="product-badge" :class="{ 'badge-sale': product.badge === 'Giảm giá' }">{{ product.badge }}</span>
+                      <button
+                        class="favorite-button"
+                        :class="{ favorited: favorites.includes(product.id) }"
+                        type="button"
+                        :aria-label="favorites.includes(product.id) ? `Bỏ yêu thích ${product.name}` : `Yêu thích ${product.name}`"
+                        :aria-pressed="favorites.includes(product.id)"
+                        @click="toggleFavorite(product.id)"
+                      ><i :class="favorites.includes(product.id) ? 'bi bi-heart-fill' : 'bi bi-heart'"></i></button>
+                      <img :src="product.image" :alt="product.name" loading="lazy" />
+                    </div>
+                    <div class="product-info">
+                      <div class="product-meta"><span>{{ product.categoryName }}</span><span class="product-rating"><i class="bi bi-star-fill"></i> {{ product.rating }}</span></div>
+                      <h3>{{ product.name }}</h3>
+                      <p class="product-description">{{ product.description }}</p>
+                      <div class="product-buy-row">
+                        <div><strong class="product-price">{{ formatPrice(product.price) }}</strong><del v-if="product.oldPrice">{{ formatPrice(product.oldPrice) }}</del></div>
+                        <button class="add-to-cart" type="button" :aria-label="`Thêm ${product.name} vào giỏ`" @click="addToCart(product)">
+                          <i class="bi bi-plus-lg"></i><span>Thêm</span>
+                        </button>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div v-else class="no-products">
+                  <i class="bi bi-search"></i>
+                  <h3>Chưa tìm thấy phụ kiện phù hợp</h3>
+                  <p>Thử từ khóa khác hoặc chọn danh mục khác nhé.</p>
+                  <button class="button-primary" type="button" @click="searchQuery = ''; activeCategory = 'all'">Xem tất cả sản phẩm</button>
+                </div>
+              </section>
+
+              <aside id="cart" class="cart-card" aria-labelledby="cartTitle">
+                <div class="cart-heading">
+                  <div><span class="cart-eyebrow">Đơn hàng của bạn</span><h2 id="cartTitle">Giỏ hàng</h2></div>
+                  <span class="cart-count">{{ cartCount }}</span>
+                </div>
+                <div class="shipping-message">
+                  <div class="shipping-copy">
+                    <i class="bi bi-truck"></i>
+                    <span v-if="cartSubtotal >= freeShippingThreshold">Đơn này được <strong>miễn phí giao hàng!</strong></span>
+                    <span v-else>Mua thêm <strong>{{ formatPrice(freeShippingThreshold - cartSubtotal) }}</strong> để miễn phí ship</span>
+                  </div>
+                  <div class="shipping-track"><span :style="{ width: `${shippingProgress}%` }"></span></div>
+                </div>
+
+                <div v-if="cart.length" class="cart-list">
+                  <article v-for="item in cart" :key="item.id" class="cart-line">
+                    <div class="cart-product-thumb"><img :src="item.image" :alt="item.name" /></div>
+                    <div class="cart-product-info">
+                      <div class="cart-product-heading">
+                        <h3>{{ item.name }}</h3>
+                        <button class="remove-item" type="button" :aria-label="`Xóa ${item.name} khỏi giỏ`" @click="removeFromCart(item.id)"><i class="bi bi-trash3"></i></button>
+                      </div>
+                      <strong>{{ formatPrice(item.price) }}</strong>
+                      <div class="quantity-stepper" :aria-label="`Số lượng ${item.name}`">
+                        <button type="button" :aria-label="`Giảm ${item.name}`" :disabled="item.quantity <= 1" @click="decreaseQuantity(item.id)">−</button>
+                        <span>{{ item.quantity }}</span>
+                        <button type="button" :aria-label="`Tăng ${item.name}`" @click="increaseQuantity(item.id)">+</button>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div v-else class="cart-empty">
+                  <span class="empty-bag"><i class="bi bi-bag-heart"></i></span>
+                  <strong>Giỏ hàng đang trống</strong>
+                  <p>Chọn vài món xinh xắn để bắt đầu nhé!</p>
+                </div>
+
+                <div class="cart-summary">
+                  <div><span>Tạm tính</span><strong>{{ formatPrice(cartSubtotal) }}</strong></div>
+                  <div><span>Giao hàng</span><strong :class="{ 'free-shipping': shippingFee === 0 && cartCount > 0 }">{{ shippingFee === 0 && cartCount > 0 ? 'Miễn phí' : formatPrice(shippingFee) }}</strong></div>
+                  <div class="summary-total"><span>Tổng cộng</span><strong>{{ formatPrice(grandTotal) }}</strong></div>
+                </div>
+                <button class="checkout-button" type="button" :disabled="cart.length === 0" @click="checkout">
+                  Tiến hành đặt hàng <i class="bi bi-arrow-right"></i>
+                </button>
+                <button v-if="cart.length" class="clear-cart" type="button" @click="clearCart">Xóa toàn bộ giỏ hàng</button>
+                <p class="secure-note"><i class="bi bi-shield-check"></i> Thanh toán an toàn · Hỗ trợ đổi trả 7 ngày</p>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section id="promotions" class="promo-section">
+          <div class="container shop-container">
+            <div class="section-heading promo-heading">
+              <div>
+                <span class="section-kicker">Chỉ trong hôm nay</span>
+                <h2>Ưu đãi dành riêng cho bạn</h2>
+              </div>
+              <span class="promo-sparkle"><i class="bi bi-stars"></i> Deal xịn, chốt liền</span>
+            </div>
+            <div class="promo-grid">
+              <article class="promo-card promo-pink">
+                <span class="promo-icon"><i class="bi bi-gift"></i></span>
+                <span class="promo-label">Khách hàng mới</span>
+                <h3>Giảm 10%</h3>
+                <p>Cho đơn hàng đầu tiên từ 299.000₫.</p>
+                <span class="promo-code">MOINOW10</span>
+              </article>
+              <article class="promo-card promo-blue">
+                <span class="promo-icon"><i class="bi bi-truck"></i></span>
+                <span class="promo-label">Giao hàng thật nhanh</span>
+                <h3>Free ship</h3>
+                <p>Miễn phí giao hàng cho đơn từ 499.000₫.</p>
+                <span class="promo-code">SHIP0</span>
+              </article>
+              <article class="promo-card promo-lilac">
+                <span class="promo-icon"><i class="bi bi-headphones"></i></span>
+                <span class="promo-label">Combo tiện ích</span>
+                <h3>Mua 2 giảm 15%</h3>
+                <p>Áp dụng cho cáp sạc và củ sạc MiniNow.</p>
+                <span class="promo-code">COMBO15</span>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer id="footer" class="site-footer">
+        <div class="container shop-container footer-grid">
+          <div>
+            <a class="brand footer-brand" href="#home">
+              <span class="brand-mark"><i class="bi bi-lightning-charge-fill"></i></span>
+              <span class="brand-name">mini<span>now</span><small>PHỤ KIỆN CÔNG NGHỆ</small></span>
+            </a>
+            <p class="footer-about">Phụ kiện công nghệ nhỏ xinh, chất lượng đáng tin cậy, giúp mỗi ngày của bạn tiện lợi hơn.</p>
+          </div>
+          <div>
+            <h2 class="footer-title">Cửa hàng</h2>
+            <a href="#products">Sản phẩm</a>
+            <a href="#promotions">Khuyến mãi</a>
+            <a href="#cart">Giỏ hàng</a>
+          </div>
+          <div>
+            <h2 class="footer-title">Hỗ trợ</h2>
+            <a href="tel:0901234567">090 123 4567</a>
+            <a href="mailto:hello@mininow.vn">hello@mininow.vn</a>
+            <span>Thứ 2 – Chủ nhật · 08:00–22:00</span>
+          </div>
+          <div>
+            <h2 class="footer-title">Theo dõi MiniNow</h2>
+            <p class="footer-about">Tin mới, món xinh và ưu đãi sẽ được gửi đến bạn.</p>
+            <div class="social-links">
+              <a href="#footer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#footer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#footer" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="container shop-container d-flex flex-column flex-sm-row justify-content-between gap-2">
+            <span>© 2026 MiniNow. Made for your everyday.</span>
+            <span>Chính sách bảo mật · Điều khoản mua hàng</span>
+            <details class="photo-credits">
+              <summary>Nguồn ảnh</summary>
+              <div class="photo-credits-list">
+                <p>Pin dự phòng: <a href="https://commons.wikimedia.org/wiki/File:Power_bank.JPG" target="_blank" rel="noreferrer">Ilya Plekhanov, Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noreferrer">CC BY-SA 3.0</a>.</p>
+                <p>Ốp lưng: <a href="https://commons.wikimedia.org/wiki/File:Mobile_phone_case.jpg" target="_blank" rel="noreferrer">Tiia Monto, Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noreferrer">CC BY-SA 4.0</a>.</p>
+                <p>Cáp sạc: <a href="https://commons.wikimedia.org/wiki/File:Black_charging_cable_type_USB-C_plugs_01.jpg" target="_blank" rel="noreferrer">Chenspec, Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noreferrer">CC BY-SA 4.0</a>.</p>
+                <p>Cáp bọc dù: <a href="https://commons.wikimedia.org/wiki/File:Black_charging_cable_type_USB-C_plugs_03.jpg" target="_blank" rel="noreferrer">Chenspec, Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noreferrer">CC BY-SA 4.0</a>.</p>
+                <p>Củ sạc: <a href="https://commons.wikimedia.org/wiki/File:Phone_charger_2026.jpg" target="_blank" rel="noreferrer">Сергей Михель, Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noreferrer">CC BY-SA 3.0</a>.</p>
+                <p>Các ảnh còn lại: Unsplash. Ảnh sản phẩm có thể được cắt theo bố cục hiển thị.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </footer>
+
+      <div class="toast-message" :class="{ visible: toastMessage }" role="status" aria-live="polite">
+        <i class="bi bi-check-circle-fill"></i> {{ toastMessage }}
+      </div>
+    </div>
+  </body>
+</html>
