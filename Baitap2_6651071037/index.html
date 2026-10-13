@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fff7fb" />
+    <meta
+      name="description"
+      content="Bếp Nhà Mơ - bánh ngọt thủ công, làm mới mỗi ngày từ nguyên liệu chọn lọc."
+    />
+    <title>Bếp Nhà Mơ — Ngọt ngào mỗi ngày</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: "#fff7fb",
+              ink: "#3e4d63",
+              leaf: "#9bc8f1",
+              peach: "#e8a8c7",
+              butter: "#eaf4ff"
+            },
+            fontFamily: {
+              sans: ["DM Sans", "sans-serif"],
+              display: ["Playfair Display", "serif"]
+            },
+            boxShadow: {
+              soft: "0 18px 50px rgba(70, 105, 145, .10)"
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-cream font-sans text-ink antialiased">
+    <header class="sticky top-0 z-40 border-b border-[#f0dce7] bg-cream/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8" aria-label="Điều hướng chính">
+        <a class="flex items-center gap-3" href="#home" aria-label="Bếp Nhà Mơ - Trang chủ">
+          <span class="grid h-11 w-11 place-items-center rounded-2xl bg-leaf text-xl text-ink" aria-hidden="true">✿</span>
+          <span>
+            <span class="block font-display text-xl font-bold leading-tight">Bếp Nhà Mơ</span>
+            <span class="block text-[10px] font-semibold uppercase tracking-[.2em] text-[#8792a3]">Bánh ngọt thủ công</span>
+          </span>
+        </a>
+
+        <button
+          id="menuToggle"
+          class="grid h-11 w-11 place-items-center rounded-full border border-[#d7e8f8] text-xl md:hidden"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mainMenu"
+          aria-label="Mở menu"
+        >☰</button>
+
+        <div id="mainMenu" class="nav-menu hidden items-center gap-8 md:flex">
+          <a class="nav-link" href="#home">Trang chủ</a>
+          <a class="nav-link" href="#menu">Thực đơn</a>
+          <a class="nav-link" href="#story">Câu chuyện</a>
+          <a class="nav-link" href="#contact">Liên hệ</a>
+        </div>
+
+        <a class="hidden items-center gap-2 rounded-full bg-leaf px-5 py-3 text-sm font-semibold text-ink transition hover:bg-[#83b4e3] sm:flex" href="#menu">
+          Khám phá bánh <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+      <div id="mobileMenu" class="hidden border-t border-[#f0dce7] bg-cream px-5 py-3 md:hidden">
+        <a class="mobile-link" href="#home">Trang chủ</a>
+        <a class="mobile-link" href="#menu">Thực đơn</a>
+        <a class="mobile-link" href="#story">Câu chuyện</a>
+        <a class="mobile-link" href="#contact">Liên hệ</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="overflow-hidden">
+        <div class="mx-auto grid max-w-7xl items-center gap-10 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-[.9fr_1.1fr] lg:gap-14 lg:py-20">
+          <div class="relative z-10">
+            <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-[#f0dce7] bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[.13em] text-leaf">
+              <span class="text-peach" aria-hidden="true">✦</span> Nướng mới mỗi sáng
+            </div>
+            <h1 class="max-w-xl font-display text-5xl font-semibold leading-[1.08] tracking-tight sm:text-6xl lg:text-[68px]">
+              Một chút ngọt,<br />
+              <span class="italic text-[#cf78a2]">một ngày vui.</span>
+            </h1>
+            <p class="mt-6 max-w-lg text-base leading-8 text-[#73796d] sm:text-lg">
+              Những chiếc bánh thủ công làm từ nguyên liệu tươi ngon, gửi đến bạn chút dịu dàng trong từng khoảnh khắc.
+            </p>
+            <div class="mt-8 flex flex-wrap items-center gap-4">
+              <a class="inline-flex items-center gap-3 rounded-full bg-leaf px-7 py-4 font-semibold text-ink shadow-lg shadow-[#9bc8f1]/30 transition hover:-translate-y-0.5 hover:bg-[#83b4e3]" href="#menu">
+                Chọn bánh ngay <span aria-hidden="true">→</span>
+              </a>
+              <a class="inline-flex items-center gap-2 px-3 py-3 text-sm font-semibold text-leaf hover:text-[#cf78a2]" href="#story">
+                Câu chuyện của Mơ <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <div class="mt-10 flex items-center gap-4 border-t border-[#f0dce7] pt-6">
+              <div class="flex -space-x-3" aria-hidden="true">
+                <img class="h-10 w-10 rounded-full border-2 border-cream object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=80&amp;q=80" alt="" />
+                <img class="h-10 w-10 rounded-full border-2 border-cream object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;w=80&amp;q=80" alt="" />
+                <img class="h-10 w-10 rounded-full border-2 border-cream object-cover" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&amp;fit=crop&amp;w=80&amp;q=80" alt="" />
+              </div>
+              <p class="text-sm text-[#73796d]"><strong class="text-ink">4.9/5</strong> · Được yêu thích bởi 2.000+ khách hàng</p>
+            </div>
+          </div>
+
+          <div class="hero-art relative mx-auto w-full max-w-2xl">
+            <div class="absolute -right-8 top-8 h-56 w-56 rounded-full bg-[#f4d8e5] blur-3xl sm:h-72 sm:w-72"></div>
+            <div class="absolute -bottom-6 left-2 h-48 w-48 rounded-full bg-[#dcecff] blur-3xl"></div>
+            <div class="relative rounded-[2rem] bg-[#f6eaf1] p-3 shadow-soft sm:rotate-2 sm:p-4">
+              <img
+                class="hero-image h-[360px] w-full rounded-[1.5rem] object-cover sm:h-[470px]"
+                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=1200&amp;q=88"
+                alt="Bánh kem dâu tươi thủ công của Bếp Nhà Mơ"
+              />
+              <div class="absolute -bottom-5 left-5 rounded-2xl bg-white px-5 py-4 shadow-soft sm:-left-8">
+                <p class="text-xs font-semibold uppercase tracking-[.14em] text-[#9a8067]">Bánh được yêu thích</p>
+                <p class="mt-1 font-display text-lg font-semibold">Dâu Mơ mùa hạ <span class="ml-2 text-peach">♡</span></p>
+              </div>
+              <div class="absolute right-5 top-5 grid h-[76px] w-[76px] -rotate-12 place-items-center rounded-full bg-[#e8a8c7] text-center text-[11px] font-bold uppercase leading-tight tracking-wider text-ink shadow-lg">
+                Làm mới<br />mỗi ngày
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-y border-[#f0dce7] bg-white/70">
+        <div class="mx-auto grid max-w-7xl gap-6 px-5 py-6 sm:grid-cols-3 sm:px-8">
+          <div class="flex items-center justify-center gap-3 py-2 text-sm font-medium text-[#596a82] sm:justify-start">
+            <span class="feature-icon">✿</span> Nguyên liệu tươi mỗi ngày
+          </div>
+          <div class="flex items-center justify-center gap-3 py-2 text-sm font-medium text-[#596a82]">
+            <span class="feature-icon">♡</span> Làm thủ công bằng cả trái tim
+          </div>
+          <div class="flex items-center justify-center gap-3 py-2 text-sm font-medium text-[#596a82] sm:justify-end">
+            <span class="feature-icon">⌁</span> Giao bánh tận tay thật nhanh
+          </div>
+        </div>
+      </section>
+
+      <section id="menu" class="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
+        <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+          <div>
+            <p class="mb-3 text-xs font-bold uppercase tracking-[.2em] text-[#cf78a2]">Ngọt ngào từ lò bánh</p>
+            <h2 class="font-display text-4xl font-semibold sm:text-5xl">Món bánh nhà Mơ</h2>
+            <p class="mt-3 max-w-xl leading-7 text-[#778397]">Mỗi chiếc bánh là một niềm vui nhỏ, được làm mới mỗi ngày dành riêng cho bạn.</p>
+          </div>
+          <a class="font-semibold text-leaf hover:text-[#cf78a2]" href="#products">Xem tất cả <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-2" role="group" aria-label="Lọc theo loại bánh">
+          <button class="category-button active" type="button" data-filter="all" aria-pressed="true">Tất cả</button>
+          <button class="category-button" type="button" data-filter="cake" aria-pressed="false">Bánh kem</button>
+          <button class="category-button" type="button" data-filter="pastry" aria-pressed="false">Bánh ngọt</button>
+          <button class="category-button" type="button" data-filter="cookie" aria-pressed="false">Bánh quy</button>
+        </div>
+
+        <div class="mt-7 grid items-start gap-8 lg:grid-cols-[1fr_310px]">
+          <div id="products" class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+            <article class="product-card" data-category="cake" data-id="strawberry" data-name="Dâu Mơ mùa hạ" data-price="125000">
+              <div class="product-image-wrap">
+                <img class="product-image" src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Bánh kem dâu tươi" loading="lazy" />
+                <span class="product-tag">Bán chạy</span>
+                <button class="favorite-button" type="button" aria-label="Yêu thích Dâu Mơ mùa hạ">♡</button>
+              </div>
+              <div class="p-4">
+                <p class="text-xs font-semibold uppercase tracking-wider text-[#8792a3]">Bánh kem · 4 người</p>
+                <h3 class="mt-2 font-display text-xl font-semibold">Dâu Mơ mùa hạ</h3>
+                <div class="mt-4 flex items-center justify-between gap-2">
+                  <span class="font-bold text-leaf">125.000₫</span>
+                  <button class="add-button" type="button">Thêm <span aria-hidden="true">＋</span></button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="pastry" data-id="croissant" data-name="Croissant bơ Pháp" data-price="45000">
+              <div class="product-image-wrap">
+                <img class="product-image" src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Bánh croissant bơ vàng giòn" loading="lazy" />
+                <span class="product-tag">Mới ra lò</span>
+                <button class="favorite-button" type="button" aria-label="Yêu thích Croissant bơ Pháp">♡</button>
+              </div>
+              <div class="p-4">
+                <p class="text-xs font-semibold uppercase tracking-wider text-[#8792a3]">Bánh ngọt · 1 chiếc</p>
+                <h3 class="mt-2 font-display text-xl font-semibold">Croissant bơ Pháp</h3>
+                <div class="mt-4 flex items-center justify-between gap-2">
+                  <span class="font-bold text-leaf">45.000₫</span>
+                  <button class="add-button" type="button">Thêm <span aria-hidden="true">＋</span></button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="cake" data-id="tiramisu" data-name="Tiramisu dịu êm" data-price="89000">
+              <div class="product-image-wrap">
+                <img class="product-image" src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Bánh tiramisu phủ cacao" loading="lazy" />
+                <button class="favorite-button" type="button" aria-label="Yêu thích Tiramisu dịu êm">♡</button>
+              </div>
+              <div class="p-4">
+                <p class="text-xs font-semibold uppercase tracking-wider text-[#8792a3]">Bánh kem · 2 người</p>
+                <h3 class="mt-2 font-display text-xl font-semibold">Tiramisu dịu êm</h3>
+                <div class="mt-4 flex items-center justify-between gap-2">
+                  <span class="font-bold text-leaf">89.000₫</span>
+                  <button class="add-button" type="button">Thêm <span aria-hidden="true">＋</span></button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="pastry" data-id="cinnamon" data-name="Cuộn quế thơm" data-price="52000">
+              <div class="product-image-wrap">
+                <img class="product-image" src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Bánh cuộn quế phủ kem" loading="lazy" />
+                <button class="favorite-button" type="button" aria-label="Yêu thích Cuộn quế thơm">♡</button>
+              </div>
+              <div class="p-4">
+                <p class="text-xs font-semibold uppercase tracking-wider text-[#8792a3]">Bánh ngọt · 1 chiếc</p>
+                <h3 class="mt-2 font-display text-xl font-semibold">Cuộn quế thơm</h3>
+                <div class="mt-4 flex items-center justify-between gap-2">
+                  <span class="font-bold text-leaf">52.000₫</span>
+                  <button class="add-button" type="button">Thêm <span aria-hidden="true">＋</span></button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="cookie" data-id="cookie" data-name="Bánh quy hạt dẻ" data-price="68000">
+              <div class="product-image-wrap">
+                <img class="product-image" src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Bánh quy chocolate mới nướng" loading="lazy" />
+                <button class="favorite-button" type="button" aria-label="Yêu thích Bánh quy hạt dẻ">♡</button>
+              </div>
+              <div class="p-4">
+                <p class="text-xs font-semibold uppercase tracking-wider text-[#8792a3]">Bánh quy · Hộp 6</p>
+                <h3 class="mt-2 font-display text-xl font-semibold">Bánh quy hạt dẻ</h3>
+                <div class="mt-4 flex items-center justify-between gap-2">
+                  <span class="font-bold text-leaf">68.000₫</span>
+                  <button class="add-button" type="button">Thêm <span aria-hidden="true">＋</span></button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="cake" data-id="strawberry-mousse" data-name="Mousse Dâu đỏ mọng" data-price="76000">
+              <div class="product-image-wrap">
+                <img class="product-image" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Bánh mousse trái cây trang trí đẹp mắt" loading="lazy" />
+                <button class="favorite-button" type="button" aria-label="Yêu thích Mousse Dâu đỏ mọng">♡</button>
+              </div>
+              <div class="p-4">
+                <p class="text-xs font-semibold uppercase tracking-wider text-[#8792a3]">Bánh kem · 2 người</p>
+                <h3 class="mt-2 font-display text-xl font-semibold">Mousse Dâu đỏ mọng</h3>
+                <div class="mt-4 flex items-center justify-between gap-2">
+                  <span class="font-bold text-leaf">76.000₫</span>
+                  <button class="add-button" type="button">Thêm <span aria-hidden="true">＋</span></button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="cart-panel lg:sticky lg:top-28" id="cart" aria-labelledby="cartTitle">
+            <div class="flex items-center justify-between">
+              <h3 id="cartTitle" class="font-display text-2xl font-semibold">Giỏ bánh</h3>
+              <span id="cartCount" class="grid h-8 min-w-8 place-items-center rounded-full bg-[#eaf4ff] px-2 text-sm font-bold text-leaf" aria-live="polite">0</span>
+            </div>
+            <p class="mt-1 text-sm text-[#85897e]">Một chút ngọt đang chờ bạn.</p>
+            <div id="cartItems" class="mt-5 space-y-4">
+              <div id="emptyCart" class="rounded-2xl border border-dashed border-[#d7e8f8] px-4 py-8 text-center">
+                <span class="text-3xl" aria-hidden="true">🥐</span>
+                <p class="mt-3 text-sm text-[#85897e]">Giỏ bánh còn trống.<br />Thêm món bạn yêu thích nhé!</p>
+              </div>
+            </div>
+            <div class="mt-5 border-t border-[#f0dce7] pt-4">
+              <div class="flex justify-between text-sm text-[#778397]">
+                <span>Tạm tính</span><span id="cartSubtotal">0₫</span>
+              </div>
+              <div class="mt-2 flex justify-between font-bold">
+                <span>Tổng cộng</span><span id="cartTotal" class="text-leaf">0₫</span>
+              </div>
+              <button id="checkoutButton" class="mt-5 w-full rounded-full bg-leaf px-5 py-3.5 font-semibold text-ink transition hover:bg-[#83b4e3] disabled:cursor-not-allowed disabled:opacity-45" type="button" disabled>
+                Đặt bánh ngay <span aria-hidden="true">→</span>
+              </button>
+              <p class="mt-3 text-center text-xs text-[#92968b]">Phí giao hàng được tính khi xác nhận đơn</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="story" class="bg-[#eef6ff]">
+        <div class="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-18 lg:grid-cols-2 lg:gap-16">
+          <div class="relative">
+            <img
+              class="h-[310px] w-full rounded-[1.75rem] object-cover shadow-soft sm:h-[390px]"
+              src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&amp;fit=crop&amp;w=1100&amp;q=85"
+              alt="Không gian bếp làm bánh ấm cúng"
+              loading="lazy"
+            />
+            <div class="absolute -bottom-5 -right-3 rounded-2xl bg-white px-5 py-4 shadow-soft sm:right-5">
+              <p class="font-display text-2xl font-bold text-leaf">Từ 2018</p>
+              <p class="text-xs text-[#778397]">Nướng bánh bằng cả trái tim</p>
+            </div>
+          </div>
+          <div class="pt-4 lg:pt-0">
+            <p class="mb-3 text-xs font-bold uppercase tracking-[.2em] text-[#cf78a2]">Câu chuyện của chúng mình</p>
+            <h2 class="font-display text-4xl font-semibold leading-tight sm:text-5xl">Bánh ngon bắt đầu từ điều tử tế.</h2>
+            <p class="mt-5 leading-8 text-[#596a82]">
+              Bếp Nhà Mơ bắt đầu từ căn bếp nhỏ và tình yêu với những món bánh nhà làm. Chúng mình chọn nguyên liệu theo mùa, làm bánh từng mẻ nhỏ và luôn tin rằng vị ngọt ngon nhất là vị ngọt được sẻ chia.
+            </p>
+            <a class="mt-7 inline-flex items-center gap-3 font-semibold text-leaf hover:text-[#cf78a2]" href="#contact">
+              Ghé thăm căn bếp <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-16">
+        <div class="flex flex-col items-center justify-between gap-6 rounded-[1.75rem] bg-[#9bc8f1] px-7 py-9 text-center text-ink sm:px-12 sm:py-12 md:flex-row md:text-left">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[.18em] text-[#405d78]">Một món quà nho nhỏ</p>
+            <h2 class="mt-2 font-display text-3xl font-semibold sm:text-4xl">Ngọt ngào hơn với ưu đãi 10%</h2>
+            <p class="mt-2 text-sm text-[#405d78]">Cho đơn hàng đầu tiên của bạn tại Bếp Nhà Mơ.</p>
+          </div>
+          <a class="shrink-0 rounded-full bg-[#fff1f7] px-7 py-3.5 font-bold text-[#3e4d63] transition hover:bg-white" href="#menu">Chọn bánh ngay →</a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="border-t border-[#f0dce7] bg-[#fff1f7]">
+      <div class="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-8 md:grid-cols-[1.2fr_.8fr_1fr]">
+        <div>
+          <a class="flex items-center gap-3" href="#home">
+            <span class="grid h-10 w-10 place-items-center rounded-xl bg-leaf text-lg text-ink" aria-hidden="true">✿</span>
+            <span class="font-display text-xl font-bold">Bếp Nhà Mơ</span>
+          </a>
+          <p class="mt-4 max-w-sm text-sm leading-7 text-[#778397]">Những chiếc bánh thủ công nhỏ xinh, mang theo niềm vui và sự ấm áp đến căn nhà của bạn.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold">Ghé thăm chúng mình</h3>
+          <p class="mt-4 text-sm leading-7 text-[#778397]">12 Nguyễn Thị Minh Khai<br />Quận 1, TP. Hồ Chí Minh</p>
+        </div>
+        <div>
+          <h3 class="font-semibold">Liên hệ</h3>
+          <p class="mt-4 text-sm leading-7 text-[#778397]">Mỗi ngày · 08:00 – 20:00<br /><a class="font-semibold text-leaf hover:underline" href="tel:0901234567">090 123 4567</a><br /><a class="font-semibold text-leaf hover:underline" href="mailto:xinchao@bepnhamo.vn">xinchao@bepnhamo.vn</a></p>
+        </div>
+      </div>
+      <div class="border-t border-[#f0dce7] px-5 py-4 text-center text-xs text-[#9298a4]">
+        © 2026 Bếp Nhà Mơ. Làm bằng sự ngọt ngào.
+      </div>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
