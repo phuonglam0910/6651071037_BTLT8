@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Câu 15 - Tabs với jQuery</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <header class="card-header">
+        <h1>Tab nội dung</h1>
+        <p class="description">Chọn từng tab để xem nội dung tương ứng.</p>
+      </header>
+
+      <div class="tab-list" role="tablist" aria-label="Các mục nội dung">
+        <button class="tab-button active" id="tab-1" type="button" role="tab"
+          aria-selected="true" aria-controls="panel-1" tabindex="0">Giới thiệu</button>
+        <button class="tab-button" id="tab-2" type="button" role="tab"
+          aria-selected="false" aria-controls="panel-2" tabindex="-1">Nội dung</button>
+        <button class="tab-button" id="tab-3" type="button" role="tab"
+          aria-selected="false" aria-controls="panel-3" tabindex="-1">Liên hệ</button>
+      </div>
+
+      <section class="tab-panel" id="panel-1" role="tabpanel" aria-labelledby="tab-1">
+        <h2>Giới thiệu</h2>
+        <p>Đây là nội dung của tab Giới thiệu. Nhấn các tab phía trên để chuyển đổi nội dung mà không cần tải lại trang.</p>
+      </section>
+      <section class="tab-panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+        <h2>Nội dung</h2>
+        <p>Các tab được dàn trang bằng CSS. jQuery lắng nghe sự kiện click, đổi trạng thái tab đang chọn và hiển thị đúng phần nội dung.</p>
+      </section>
+      <section class="tab-panel" id="panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+        <h2>Liên hệ</h2>
+        <p>Đây là nội dung của tab Liên hệ. Bạn có thể thay các tiêu đề và phần nội dung mẫu này theo source được cung cấp.</p>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

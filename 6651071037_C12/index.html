@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Câu 12</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="box">
+      <h2>Thông tin bổ sung</h2>
+      <p class="description">Chọn Yes nếu bạn muốn cung cấp thông tin tương ứng.</p>
+      <div class="row">
+        <span class="label">Passport</span>
+        <div class="option-group">
+          <label><input type="radio" name="passport" value="yes" /> Yes</label>
+          <label><input type="radio" name="passport" value="no" checked /> No</label>
+        </div>
+        <div id="passportBox" class="hidden">
+          <input type="text" placeholder="Nhập thông tin passport" />
+        </div>
+      </div>
+      <div class="row">
+        <span class="label">Credit Card</span>
+        <div class="option-group">
+          <label><input type="radio" name="credit" value="yes" /> Yes</label>
+          <label><input type="radio" name="credit" value="no" checked /> No</label>
+        </div>
+        <div id="creditBox" class="hidden">
+          <input type="text" placeholder="Nhập thông tin thẻ" />
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

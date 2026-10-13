@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý danh sách</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <h1>Danh sách thành viên</h1>
+      <p class="description">Nhập thông tin để thêm một hàng mới. Tích chọn các hàng cần xóa.</p>
+
+      <form id="memberForm" novalidate>
+        <div class="form-grid">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Nhập họ và tên" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="name@example.com" required />
+          </div>
+          <div>
+            <label for="birthdate">Birthdate</label>
+            <input id="birthdate" name="birthdate" type="date" required />
+          </div>
+        </div>
+        <div class="actions">
+          <button class="add-button" type="submit">Add Row</button>
+          <button class="delete-button" id="deleteRows" type="button">Delete Row</button>
+        </div>
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="select-cell"><span class="sr-only">Chọn</span></th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Birthdate</th>
+            </tr>
+          </thead>
+          <tbody id="memberRows">
+            <tr class="empty-row"><td colspan="4">Chưa có dữ liệu.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <div class="heading-row">
+        <div class="heading-icon" aria-hidden="true">?</div>
+        <div>
+          <h1>Câu hỏi thường gặp</h1>
+          <p class="description">Nhấn vào một tiêu đề để mở nội dung. Mỗi lần chỉ mở một mục.</p>
+        </div>
+      </div>
+
+      <section class="accordion-item">
+        <h2>
+          <button class="accordion-title" type="button" aria-expanded="false" aria-controls="content-1">
+            Accordion là gì?
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+        </h2>
+        <div class="accordion-content" id="content-1" hidden>
+          <p>Accordion là thành phần giao diện gồm các tiêu đề có thể bấm để mở hoặc đóng phần nội dung bên dưới.</p>
+        </div>
+      </section>
+
+      <section class="accordion-item">
+        <h2>
+          <button class="accordion-title" type="button" aria-expanded="false" aria-controls="content-2">
+            Accordion hoạt động như thế nào?
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+        </h2>
+        <div class="accordion-content" id="content-2" hidden>
+          <p>jQuery xử lý sự kiện click trên tiêu đề, đóng các phần nội dung khác rồi mở phần nội dung tương ứng với tiêu đề vừa chọn.</p>
+        </div>
+      </section>
+
+      <section class="accordion-item">
+        <h2>
+          <button class="accordion-title" type="button" aria-expanded="false" aria-controls="content-3">
+            Có thể đóng mục đang mở không?
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+        </h2>
+        <div class="accordion-content" id="content-3" hidden>
+          <p>Có. Nhấn lại tiêu đề đang mở để đóng mục đó; các mục còn lại vẫn được giữ ở trạng thái đóng.</p>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

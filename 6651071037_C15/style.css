@@ -1,0 +1,148 @@
+* {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        padding: 24px;
+        display: grid;
+        place-items: center;
+        background:
+          radial-gradient(ellipse at 12% 8%, rgba(96, 165, 250, 0.24), transparent 32%),
+          radial-gradient(ellipse at 88% 92%, rgba(167, 139, 250, 0.18), transparent 30%),
+          #f4f7fb;
+        color: #172033;
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
+
+      .card {
+        width: min(100%, 720px);
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid #e6ebf2;
+        border-radius: 24px;
+        box-shadow: 0 30px 90px rgba(31, 54, 88, 0.16);
+      }
+
+      .card-header {
+        position: relative;
+        overflow: hidden;
+        padding: 38px 38px 28px;
+        background: linear-gradient(120deg, #f8fbff, #fff 60%, #f5f3ff);
+      }
+
+      .card-header::after {
+        position: absolute;
+        top: -54px;
+        right: -28px;
+        width: 190px;
+        height: 190px;
+        border: 28px solid rgba(96, 165, 250, 0.08);
+        border-radius: 50%;
+        content: "";
+        pointer-events: none;
+      }
+
+      .eyebrow {
+        margin: 0 0 8px;
+        color: #2563eb;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(24px, 5vw, 32px);
+      }
+
+      .description {
+        margin: 10px 0 0;
+        color: #64748b;
+        line-height: 1.6;
+      }
+
+      .tab-list {
+        display: flex;
+        gap: 8px;
+        padding: 12px 28px;
+        border-top: 1px solid #eef2f7;
+        border-bottom: 1px solid #e6ebf2;
+        background: #fbfcfe;
+      }
+
+      .tab-button {
+        position: relative;
+        padding: 12px 18px;
+        border: 0;
+        border-radius: 10px;
+        background: transparent;
+        color: #64748b;
+        cursor: pointer;
+        font: inherit;
+        font-weight: 650;
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+      }
+
+      .tab-button:hover {
+        background: #eef4fb;
+        color: #1d4ed8;
+        transform: translateY(-1px);
+      }
+
+      .tab-button.active {
+        color: #fff;
+        background: linear-gradient(135deg, #2563eb, #4f46e5);
+        box-shadow: 0 7px 16px rgba(37, 99, 235, 0.24);
+      }
+
+      .tab-button:focus-visible {
+        outline: 3px solid #bfdbfe;
+        outline-offset: 2px;
+      }
+
+      .tab-panel {
+        min-height: 230px;
+        padding: 32px 38px 38px;
+        animation: appear 0.26s ease;
+      }
+
+      .tab-panel[hidden] {
+        display: none;
+      }
+
+      .tab-panel h2 {
+        margin: 0 0 10px;
+        color: #1e3a8a;
+        font-size: 23px;
+      }
+
+      .tab-panel p {
+        margin: 0;
+        color: #64748b;
+        line-height: 1.75;
+      }
+
+      .tab-panel::before {
+        display: block;
+        width: 42px;
+        height: 4px;
+        margin-bottom: 18px;
+        border-radius: 99px;
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        content: "";
+      }
+
+      @keyframes appear {
+        from { opacity: 0; transform: translateY(5px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @media (max-width: 520px) {
+        .card-header { padding: 28px 22px 22px; }
+        .tab-list { gap: 4px; padding: 10px 12px; }
+        .tab-button { flex: 1; padding: 11px 7px; font-size: 13px; }
+        .tab-panel { min-height: 190px; padding: 24px 22px 28px; }
+      }

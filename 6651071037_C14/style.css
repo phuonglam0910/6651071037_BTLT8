@@ -1,0 +1,39 @@
+:root {
+        --bg: #0b1220; --panel: #111c31; --text: #f8fafc; --muted: #a8b5ca;
+        --button-bg: #334155; --button-text: #ffffff; --accent: #60a5fa;
+      }
+      body.light {
+        --bg: #eef4fb; --panel: #ffffff; --text: #172033; --muted: #64748b;
+        --button-bg: #dbeafe; --button-text: #1e3a8a; --accent: #2563eb;
+      }
+      body {
+        margin: 0; font-family: "Segoe UI", Arial, sans-serif; background: var(--bg); color: var(--text);
+        min-height: 100vh; display: flex; justify-content: center; align-items: center;
+        padding: 24px; transition: background .3s ease, color .3s ease;
+      }
+      .panel {
+        width: min(100%, 480px); background: var(--panel); border: 1px solid rgba(148,163,184,.18);
+        border-radius: 22px; padding: 34px;
+        box-shadow: 0 24px 70px rgba(0,0,0,.18); transition: background .3s ease;
+      }
+      .eyebrow { color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; text-align: center; }
+      h2 { font-size: 28px; text-align: center; margin: 10px 0; }
+      .description { color: var(--muted); text-align: center; line-height: 1.6; margin: 0 0 28px; }
+      .toggle-row { display: flex; justify-content: space-between; align-items: center; background: rgba(148,163,184,.08); border-radius: 14px; padding: 18px; }
+      .label { font-size: 17px; font-weight: 700; }
+      .switch {
+        position: relative; width: 76px; height: 40px; background: var(--button-bg);
+        border-radius: 999px; cursor: pointer; transition: background .3s ease;
+        outline: none;
+      }
+      .switch .slider {
+        position: absolute; width: 30px; height: 30px; border-radius: 50%;
+        background: var(--button-text); top: 5px; left: 5px; transition: left .3s ease;
+      }
+      .switch.on { background: var(--accent); }
+      .switch.on .slider { left: 41px; }
+      .switch:focus-visible { box-shadow: 0 0 0 4px rgba(96,165,250,.3); }
+      .status { display: flex; align-items: center; gap: 9px; font-size: 14px; color: var(--muted); margin-top: 18px; }
+      .status::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #64748b; }
+      body.light .status::before { background: #22c55e; }
+      @media (max-width: 480px) { .panel { padding: 28px 22px; } h2 { font-size: 24px; } }
